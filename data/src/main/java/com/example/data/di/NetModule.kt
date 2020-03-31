@@ -1,5 +1,6 @@
 package com.example.data.di
 
+import com.example.data.service.EmployeeApiService
 import com.google.gson.Gson
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import org.koin.dsl.module
@@ -25,6 +26,8 @@ val NET_MODULE = module {
 //    single<UserRemoteDataStore> { UserremoteDataStoreImpl() }
 //    single<UserLocalDataStore> { UserLocalDataStoreImpl() }
 //    single<UserRepository> { UserRepositoryImpl(get(), get()) }
+
+    single<EmployeeApiService> { get<Retrofit>().create(EmployeeApiService::class.java) }
 
     single {
         Retrofit.Builder()
