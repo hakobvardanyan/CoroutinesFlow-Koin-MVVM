@@ -1,4 +1,7 @@
 package com.example.domain
 
-public class BaseUseCase {
+abstract class BaseUseCase {
+
+
+
 }

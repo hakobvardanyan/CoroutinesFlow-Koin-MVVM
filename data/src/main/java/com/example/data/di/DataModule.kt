@@ -1,6 +1,7 @@
 package com.example.data.di
 
 import com.example.data.repository.*
+import com.example.domain.repository.EmployeeRepository
 import org.koin.dsl.module
 
 val DATA_MODULE = module {
