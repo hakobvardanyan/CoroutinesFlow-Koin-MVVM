@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation_graph"
+    app:startDestination="@id/employeesListFragment">
+
+    <fragment
+        android:id="@+id/employeesListFragment"
+        android:name="com.example.coroutinesflow_koin_mvvm.EmployeesListFragment"
+        android:label="employees_list_fragment"
+        tools:layout="@layout/employees_list_fragment" />
+</navigation>

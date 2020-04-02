@@ -10,10 +10,5 @@ class SingleActivity : AppCompatActivity() {
         setupKoinFragmentFactory()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_single)
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, EmployeesListFragment::class.java, null, null)
-            .commit()
-
     }
 }
