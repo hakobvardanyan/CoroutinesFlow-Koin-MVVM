@@ -1,4 +1,4 @@
-package com.example.coroutinesflow_koin_mvvm
+package com.example.coroutinesflow_koin_mvvm.feature.employeeslist
 
 import androidx.lifecycle.ViewModel
 import com.example.domain.employee.LoadEmployeeUseCase

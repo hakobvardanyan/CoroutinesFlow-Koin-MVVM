@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/employeesListFragment"
-        android:name="com.example.coroutinesflow_koin_mvvm.EmployeesListFragment"
+        android:name="com.example.coroutinesflow_koin_mvvm.feature.employeeslist.EmployeesListFragment"
         android:label="employees_list_fragment"
         tools:layout="@layout/employees_list_fragment" />
 </navigation>

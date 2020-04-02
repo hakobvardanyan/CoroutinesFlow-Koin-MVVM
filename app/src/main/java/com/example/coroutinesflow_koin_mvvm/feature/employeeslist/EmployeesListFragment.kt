@@ -1,4 +1,4 @@
-package com.example.coroutinesflow_koin_mvvm
+package com.example.coroutinesflow_koin_mvvm.feature.employeeslist
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.viewModelScope
+import com.example.coroutinesflow_koin_mvvm.R
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 

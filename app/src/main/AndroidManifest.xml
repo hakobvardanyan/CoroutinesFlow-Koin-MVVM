@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="n">
-        <activity android:name=".SingleActivity">
+        <activity android:name=".feature.main.MainSingleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
