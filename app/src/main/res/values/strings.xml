@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CoroutinesFlow-Koin-MVVM</string>
+    <string name="profile_type_text">Profile type: %s</string>
 </resources>

@@ -1,7 +1,7 @@
 package com.example.data.di
 
 import com.example.data.repository.*
-import com.example.domain.repository.EmployeeRepository
+import com.example.domain.repository.UserRepository
 import org.koin.dsl.module
 
 val DATA_MODULE = module {
@@ -12,8 +12,8 @@ val DATA_MODULE = module {
 //    single<IAdsLocalDataStore> { AdsLocalDataStore() }
 //
     // employees
-    single<EmployeeRepository> { EmployeeRepositoryImpl(get(), get()) }
-    single<EmployeeLocalDataStore> { EmployeeLocalDataStoreImpl(get()) }
-    single<EmployeeRemoteDataStore> { EmployeeRemoteDataStoreImpl(get()) }
+    single<UserRepository> { UserRepositoryImpl(get(), get()) }
+    single<UserLocalDataStore> { UserLocalDataStoreImpl(get()) }
+    single<UserRemoteDataStore> { UserRemoteDataStoreImpl(get()) }
 
 }

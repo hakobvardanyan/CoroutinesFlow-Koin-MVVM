@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_common">16dp</dimen>
+    <dimen name="padding_medium">12dp</dimen>
+    <dimen name="padding_small">10dp</dimen>
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="avatar_size">56dp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_common">14sp</dimen>
+    <dimen name="radius_small">8dp</dimen>
+</resources>

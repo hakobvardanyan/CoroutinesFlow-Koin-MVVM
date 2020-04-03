@@ -1,6 +1,6 @@
 package com.example.data.di
 
-import com.example.data.service.EmployeeApiService
+import com.example.data.service.UserApiService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
@@ -10,11 +10,11 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-private const val BASE_URL = "http://dummy.restapiexample.com/api/v1/"
+private const val BASE_URL = "https://api.github.com/"
 
 val NET_MODULE = module {
 
-    single<EmployeeApiService> { get<Retrofit>().create(EmployeeApiService::class.java) }
+    single<UserApiService> { get<Retrofit>().create(UserApiService::class.java) }
 
     single<Gson> { GsonBuilder().setLenient().create() }
 
