@@ -28,5 +28,4 @@ class UserAdapter : BaseAdapter<UserViewData, UserViewHolder>() {
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         holder.bind(items[position])
     }
-
 }

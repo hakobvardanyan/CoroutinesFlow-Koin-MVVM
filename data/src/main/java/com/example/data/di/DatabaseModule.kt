@@ -9,17 +9,6 @@ private const val DATABASE_NAME = "AppDatabase"
 
 val DB_MODULE = module {
 
-//    factory { AppDbCleanHelper(get(named<BaseEntity>())) }
-//
-//    single(named<BaseEntity>()) {
-//        val context = androidContext()
-//        MyObjectBox
-//                .builder()
-//                .androidContext(context)
-//                .maxReaders(1000)
-//                .build()
-//    }
-
     single {
         Room.databaseBuilder(androidContext(), AppDatabase::class.java, DATABASE_NAME)
             .fallbackToDestructiveMigration()

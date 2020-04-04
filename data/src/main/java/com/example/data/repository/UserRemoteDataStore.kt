@@ -8,5 +8,4 @@ interface UserRemoteDataStore {
     suspend fun getUsers(): Flow<List<UserApiModel>>
 
     suspend fun getUsers(id: String): Flow<UserApiModel>
-
 }

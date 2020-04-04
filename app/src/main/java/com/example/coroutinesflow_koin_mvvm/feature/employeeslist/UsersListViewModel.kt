@@ -15,5 +15,4 @@ class UsersListViewModel constructor(
         return userUseCase.execute()
             .map { UserDataMapper.toViewData(it) }
     }
-
 }

@@ -38,5 +38,4 @@ class UserDividerItemDecoration(
         divider.setBounds(leftOffset, top, parent.width, bottom)
         divider.draw(canvas)
     }
-
 }

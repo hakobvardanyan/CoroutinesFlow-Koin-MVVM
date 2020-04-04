@@ -15,5 +15,4 @@ class UserRemoteDataStoreImpl constructor(
     override suspend fun getUsers(id: String): Flow<UserApiModel> {
         return flowOf(userService.getUser(id))
     }
-
 }

@@ -15,5 +15,4 @@ interface UserDao {
 
     @Query("SELECT * FROM user ORDER BY name ASC")
     fun loadUsers(): Flow<List<UserDatabaseModel>>
-
 }

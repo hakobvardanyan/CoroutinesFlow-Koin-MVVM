@@ -22,5 +22,4 @@ object UserDataMapper {
     fun toViewData(from: List<UserModel>): List<UserViewData> {
         return from.map { toViewData(it) }
     }
-
 }

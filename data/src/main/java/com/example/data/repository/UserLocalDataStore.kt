@@ -8,5 +8,4 @@ interface UserLocalDataStore {
     suspend fun saveUsers(users: List<UserDatabaseModel>): Flow<List<Long>>
 
     suspend fun getUsers(): Flow<List<UserDatabaseModel>>
-
 }

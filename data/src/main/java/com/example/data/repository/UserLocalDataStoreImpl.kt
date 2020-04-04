@@ -16,5 +16,4 @@ class UserLocalDataStoreImpl constructor(
     override suspend fun getUsers(): Flow<List<UserDatabaseModel>> {
         return database.userDao().loadUsers()
     }
-
 }

@@ -3,7 +3,6 @@ package com.example.coroutinesflow_koin_mvvm.feature.employeeslist
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.coroutinesflow_koin_mvvm.R
@@ -79,5 +78,4 @@ class UsersListFragment constructor(
     private fun hideLoading() {
         progressBar?.visibility = View.GONE
     }
-
 }
