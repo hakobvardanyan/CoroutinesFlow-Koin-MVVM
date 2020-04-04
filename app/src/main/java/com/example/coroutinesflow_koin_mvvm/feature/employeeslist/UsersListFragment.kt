@@ -8,6 +8,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.coroutinesflow_koin_mvvm.R
 import com.example.coroutinesflow_koin_mvvm.feature.base.BaseFragment
+import com.google.android.material.snackbar.Snackbar.LENGTH_SHORT
+import com.google.android.material.snackbar.Snackbar.make
 import kotlinx.android.synthetic.main.user_list_fragment.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
@@ -36,10 +38,16 @@ class UsersListFragment constructor(
     }
 
     private suspend fun observeUsers() {
-        viewModel.observeUsers().collect {
-            userAdapter?.updateItems(it)
+        try {
+            viewModel.observeUsers()
+                .collect {
+                    userAdapter?.updateItems(it)
+                    hideLoading()
+                    observeItemClicks()
+                }
+        } catch (e: Exception) {
             hideLoading()
-            observeItemClicks()
+            showUnexpectedError()
         }
     }
 
@@ -47,6 +55,10 @@ class UsersListFragment constructor(
         userAdapter?.itemClicks()?.collect {
             Toast.makeText(context, "${it.name}", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun showUnexpectedError() {
+        make(requireView(), getString(R.string.unexpected_error_text), LENGTH_SHORT).show()
     }
 
     private fun setupRecyclerView() {
