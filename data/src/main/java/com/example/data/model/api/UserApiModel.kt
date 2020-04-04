@@ -14,15 +14,15 @@ data class UserApiModel(
     @SerializedName(value = "login")
     val login: String?,
     @SerializedName(value = "node_id")
-    val nodeId: String,
+    val nodeId: String?,
     @SerializedName(value = "html_url")
-    val htmlUrl: String,
+    val htmlUrl: String?,
     @SerializedName(value = "location")
     val location: String?,
     @SerializedName(value = "repos_url")
-    val reposUrl: String,
+    val reposUrl: String?,
     @SerializedName(value = "gists_url")
-    val gistsUrl: String,
+    val gistsUrl: String?,
     @SerializedName(value = "followers")
     val followers: Int?,
     @SerializedName(value = "following")
@@ -30,29 +30,29 @@ data class UserApiModel(
     @SerializedName(value = "avatar_url")
     val avatarUrl: String,
     @SerializedName(value = "events_url")
-    val eventsUrl: String,
+    val eventsUrl: String?,
     @SerializedName(value = "site_admin")
-    val siteAdmin: Boolean,
+    val siteAdmin: Boolean?,
     @SerializedName(value = "updated_at")
-    val updatedAt: String,
+    val updatedAt: String?,
     @SerializedName(value = "created_at")
     val createdAt: String?,
     @SerializedName(value = "gravatar_id")
-    val grAvatarId: String,
+    val grAvatarId: String?,
     @SerializedName(value = "starred_url")
-    val starredUrl: String,
+    val starredUrl: String?,
     @SerializedName(value = "public_repos")
-    val publicRepos: Int,
+    val publicRepos: Int?,
     @SerializedName(value = "public_gists")
-    val publicGists: Int,
+    val publicGists: Int?,
     @SerializedName(value = "followers_url")
-    val followersUrl: String,
+    val followersUrl: String?,
     @SerializedName(value = "following_url")
-    val followingUrl: String,
+    val followingUrl: String?,
     @SerializedName(value = "subscriptions_url")
-    val subscriptionsUrl: String,
+    val subscriptionsUrl: String?,
     @SerializedName(value = "organizations_url")
-    val organizationsUrl: String,
+    val organizationsUrl: String?,
     @SerializedName(value = "received_events_url")
-    val receivedEventsUrl: String
+    val receivedEventsUrl: String?
 )

@@ -31,15 +31,18 @@ class UsersListFragment constructor(
 
         viewModel.viewModelScope.launch {
 
-            viewModel.observeEmployers().collect {
+            viewModel.observeUsers().collect {
                 userAdapter?.updateItems(it)
                 hideLoading()
+                observeItemClicks()
             }
 
-            userAdapter?.itemClicks()?.collect {
-                Toast.makeText(context, "${it.name}", Toast.LENGTH_SHORT).show()
-            }
+        }
+    }
 
+    private suspend fun observeItemClicks() {
+        userAdapter?.itemClicks()?.collect {
+            Toast.makeText(context, "${it.name}", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -50,11 +53,11 @@ class UsersListFragment constructor(
     }
 
     private fun showLoading() {
-        progressBar.visibility = View.VISIBLE
+        progressBar?.visibility = View.VISIBLE
     }
 
     private fun hideLoading() {
-        progressBar.visibility = View.GONE
+        progressBar?.visibility = View.GONE
     }
 
 }

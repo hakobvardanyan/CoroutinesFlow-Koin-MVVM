@@ -5,8 +5,7 @@ import android.view.ViewGroup
 import com.example.coroutinesflow_koin_mvvm.R
 import com.example.coroutinesflow_koin_mvvm.feature.base.BaseAdapter
 import com.example.coroutinesflow_koin_mvvm.viewdata.UserViewData
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 

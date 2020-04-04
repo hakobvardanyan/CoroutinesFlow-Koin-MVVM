@@ -11,7 +11,7 @@ class UsersListViewModel constructor(
     private val userUseCase: LoadUserUseCase
 ) : ViewModel() {
 
-    suspend fun observeEmployers(): Flow<List<UserViewData>> {
+    suspend fun observeUsers(): Flow<List<UserViewData>> {
         return userUseCase.execute()
             .map { UserDataMapper.toViewData(it) }
     }
