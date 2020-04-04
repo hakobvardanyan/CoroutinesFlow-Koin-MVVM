@@ -2,19 +2,32 @@ package com.example.coroutinesflow_koin_mvvm.feature.employeeslist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.ListAdapter
 import com.example.coroutinesflow_koin_mvvm.R
+import com.example.coroutinesflow_koin_mvvm.feature.base.BaseAdapter
 import com.example.coroutinesflow_koin_mvvm.viewdata.UserViewData
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.collect
 
-class UserAdapter : ListAdapter<UserViewData, UserViewHolder>(UserDiffCallback()) {
+@FlowPreview
+@ExperimentalCoroutinesApi
+class UserAdapter : BaseAdapter<UserViewData, UserViewHolder>() {
+
+    override val diffCallback = UserDiffUtilCallback()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.user_item_view, parent, false)
-        return UserViewHolder(view)
+        val userViewHolder = UserViewHolder(view)
+
+        adapterScope.launch {
+            userViewHolder.clicksFlow.collect { clickChannel.send(it) }
+        }
+
+        return userViewHolder
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(items[position])
     }
+
 }

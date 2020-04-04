@@ -6,10 +6,6 @@ import org.koin.dsl.module
 
 val VIEW_MODEL_MODULE = module {
 
-    viewModel {
-        UsersListViewModel(
-            get()
-        )
-    }
+    viewModel { UsersListViewModel(get()) }
 
 }
