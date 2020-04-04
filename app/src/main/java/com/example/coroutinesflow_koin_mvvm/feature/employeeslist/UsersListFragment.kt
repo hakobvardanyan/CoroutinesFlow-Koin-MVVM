@@ -3,6 +3,7 @@ package com.example.coroutinesflow_koin_mvvm.feature.employeeslist
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.coroutinesflow_koin_mvvm.R
@@ -30,13 +31,15 @@ class UsersListFragment constructor(
         setupRecyclerView()
 
         viewModel.viewModelScope.launch {
+            observeUsers()
+        }
+    }
 
-            viewModel.observeUsers().collect {
-                userAdapter?.updateItems(it)
-                hideLoading()
-                observeItemClicks()
-            }
-
+    private suspend fun observeUsers() {
+        viewModel.observeUsers().collect {
+            userAdapter?.updateItems(it)
+            hideLoading()
+            observeItemClicks()
         }
     }
 
@@ -47,9 +50,12 @@ class UsersListFragment constructor(
     }
 
     private fun setupRecyclerView() {
+        val color = ContextCompat.getColor(requireContext(), R.color.colorGreyLight)
+        val height = resources.getDimensionPixelOffset(R.dimen.divider_height)
         userAdapter = UserAdapter()
-        employeesRecyclerView.layoutManager = LinearLayoutManager(context)
-        employeesRecyclerView.adapter = userAdapter
+        usersRecyclerView.layoutManager = LinearLayoutManager(context)
+        usersRecyclerView.adapter = userAdapter
+        usersRecyclerView.addItemDecoration(UserDividerItemDecoration(color, height))
     }
 
     private fun showLoading() {

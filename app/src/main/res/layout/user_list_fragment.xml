@@ -6,7 +6,7 @@
     tools:context=".feature.employeeslist.UsersListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/employeesRecyclerView"
+        android:id="@+id/usersRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/user_item_view" />
