@@ -12,5 +12,5 @@ import com.example.data.model.database.UserDatabaseModel
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun employeeDao(): UserDao
+    abstract fun userDao(): UserDao
 }

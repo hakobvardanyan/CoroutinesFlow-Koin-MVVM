@@ -12,25 +12,25 @@ data class UserDatabaseModel(
     @ColumnInfo(name ="url")
     val url: String,
     @ColumnInfo(name ="name")
-    val name: String,
+    val name: String?,
     @ColumnInfo(name ="type")
     val type: String,
     @ColumnInfo(name ="login")
-    val login: String,
+    val login: String?,
     @ColumnInfo(name ="node_id")
     val nodeId: String,
     @ColumnInfo(name ="html_url")
     val htmlUrl: String,
     @ColumnInfo(name ="location")
-    val location: String,
+    val location: String?,
     @ColumnInfo(name ="repos_url")
     val reposUrl: String,
     @ColumnInfo(name ="gists_url")
     val gistsUrl: String,
     @ColumnInfo(name ="followers")
-    val followers: Int,
+    val followers: Int?,
     @ColumnInfo(name ="following")
-    val following: Int,
+    val following: Int?,
     @ColumnInfo(name ="avatar_url")
     val avatarUrl: String,
     @ColumnInfo(name ="events_url")
@@ -40,7 +40,7 @@ data class UserDatabaseModel(
     @ColumnInfo(name ="updated_at")
     val updatedAt: String,
     @ColumnInfo(name ="created_at")
-    val createdAt: String,
+    val createdAt: String?,
     @ColumnInfo(name ="gravatar_id")
     val grAvatarId: String,
     @ColumnInfo(name ="starred_url")

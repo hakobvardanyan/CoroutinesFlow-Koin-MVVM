@@ -13,7 +13,7 @@ class UserRepositoryImpl constructor(
 
     override suspend fun getUsers(): Flow<List<UserModel>> {
         return remoteDataStore.getUsers().map {
-            UserDataMapper.transform(it)
+            UserDataMapper.transformFromApiModel(it)
         }
     }
 }

@@ -9,12 +9,12 @@ class UserLocalDataStoreImpl constructor(
     private val database: AppDatabase
 ) : UserLocalDataStore {
 
-    override suspend fun saveUsers(employees: List<UserDatabaseModel>): Flow<List<Long>> {
-        return flowOf(database.employeeDao().insertUsers(employees))
+    override suspend fun saveUsers(users: List<UserDatabaseModel>): Flow<List<Long>> {
+        return flowOf(database.userDao().insertUsers(users))
     }
 
     override suspend fun getUsers(): Flow<List<UserDatabaseModel>> {
-        return database.employeeDao().loadUsers()
+        return database.userDao().loadUsers()
     }
 
 }
