@@ -1,9 +1,9 @@
-package com.example.coroutinesflow_koin_mvvm.feature.employeeslist
+package com.example.coroutinesflow_koin_mvvm.feature.userslist
 
 import androidx.lifecycle.ViewModel
 import com.example.coroutinesflow_koin_mvvm.mapper.UserDataMapper
 import com.example.coroutinesflow_koin_mvvm.viewdata.UserViewData
-import com.example.domain.employee.LoadUserUseCase
+import com.example.domain.user.LoadUserUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

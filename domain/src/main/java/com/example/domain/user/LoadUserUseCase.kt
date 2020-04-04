@@ -1,4 +1,4 @@
-package com.example.domain.employee
+package com.example.domain.user
 
 import com.example.domain.FlowUseCase
 import com.example.domain.model.UserModel

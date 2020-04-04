@@ -1,4 +1,4 @@
-package com.example.coroutinesflow_koin_mvvm.feature.employeeslist
+package com.example.coroutinesflow_koin_mvvm.feature.userslist
 
 import com.example.coroutinesflow_koin_mvvm.feature.base.DiffUtilCallback
 import com.example.coroutinesflow_koin_mvvm.viewdata.UserViewData

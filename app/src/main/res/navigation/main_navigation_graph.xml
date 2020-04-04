@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation_graph"
-    app:startDestination="@id/employeesListFragment">
+    app:startDestination="@id/usersListFragment">
 
     <fragment
-        android:id="@+id/employeesListFragment"
-        android:name="com.example.coroutinesflow_koin_mvvm.feature.employeeslist.UsersListFragment"
-        android:label="employees_list_fragment"
+        android:id="@+id/usersListFragment"
+        android:name="com.example.coroutinesflow_koin_mvvm.feature.userslist.UsersListFragment"
+        android:label="users_list_fragment"
         tools:layout="@layout/user_list_fragment" />
 </navigation>

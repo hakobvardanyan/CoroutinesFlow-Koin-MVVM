@@ -1,4 +1,4 @@
-package com.example.coroutinesflow_koin_mvvm.feature.employeeslist
+package com.example.coroutinesflow_koin_mvvm.feature.userslist
 
 import android.graphics.Canvas
 import android.graphics.Rect
