@@ -13,15 +13,13 @@ import kotlinx.coroutines.flow.asFlow
 @ExperimentalCoroutinesApi
 abstract class BaseAdapter<T : BaseItem, H : BaseViewHolder<T>> : RecyclerView.Adapter<H>() {
 
-    protected val clickChannel = ConflatedBroadcastChannel<T?>()
+    protected val clickChannel = ConflatedBroadcastChannel<T>()
     protected val adapterScope = CoroutineScope(Dispatchers.Main)
     protected val items = mutableListOf<T>()
 
     protected abstract val diffCallback: DiffUtilCallback<T>
 
     fun itemClicks() = clickChannel.asFlow()
-
-    fun getAllItems(): List<T> = items
 
     fun updateItems(newItems: List<T>) {
         diffCallback.submitLists(newItems, items)

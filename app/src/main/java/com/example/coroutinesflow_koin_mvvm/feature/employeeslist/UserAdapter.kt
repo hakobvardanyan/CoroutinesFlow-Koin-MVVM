@@ -5,8 +5,10 @@ import android.view.ViewGroup
 import com.example.coroutinesflow_koin_mvvm.R
 import com.example.coroutinesflow_koin_mvvm.feature.base.BaseAdapter
 import com.example.coroutinesflow_koin_mvvm.viewdata.UserViewData
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 
 @FlowPreview
 @ExperimentalCoroutinesApi
@@ -18,11 +20,9 @@ class UserAdapter : BaseAdapter<UserViewData, UserViewHolder>() {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.user_item_view, parent, false)
         val userViewHolder = UserViewHolder(view)
-
-        adapterScope.launch {
-            userViewHolder.clicksFlow.collect { clickChannel.send(it) }
-        }
-
+        userViewHolder.clicksFlow
+            .onEach { clickChannel.send(it) }
+            .launchIn(adapterScope)
         return userViewHolder
     }
 

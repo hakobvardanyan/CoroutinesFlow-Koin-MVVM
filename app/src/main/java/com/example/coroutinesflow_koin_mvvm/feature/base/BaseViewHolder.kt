@@ -10,9 +10,9 @@ import kotlinx.coroutines.flow.map
 @ExperimentalCoroutinesApi
 abstract class BaseViewHolder<T : BaseItem>(view: View) : RecyclerView.ViewHolder(view) {
 
-    protected var boundData: T? = null
+    protected lateinit var boundData: T
 
-    val clicksFlow: Flow<T?> = itemView.clicks().map { boundData }
+    val clicksFlow: Flow<T> = itemView.clicks().map { boundData }
 
     abstract fun bind(data: T)
 
